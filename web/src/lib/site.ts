@@ -18,7 +18,7 @@ export const site = {
   // Point de dépôt des dons en nature — à compléter avec l'adresse fournie par l'association
   dropOff: {
     address: "15 rue de Marignan, 69003 Lyon",
-    hours: [] as string[], // ex. ["Mardi : 18 h – 20 h", "Samedi : 10 h – 12 h"]
+    hours: ["Mercredi : 18 h – 20 h", "Samedi : 18 h – 20 h"],
     details: "", // ex. "Sonner à l'interphone « 3 As de Cœur »"
   },
 };
