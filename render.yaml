@@ -1,0 +1,38 @@
+# Blueprint Render — https://render.com/docs/blueprint-spec
+# Render > New > Blueprint > sélectionner le dépôt GitHub : ce fichier crée le service automatiquement.
+services:
+  - type: web
+    name: asso-maraudes-web
+    runtime: node
+    region: frankfurt          # au plus près des utilisateurs français et de Supabase (UE)
+    plan: starter              # "free" possible pour tester, mais le service s'endort après 15 min
+    rootDir: web
+    buildCommand: npm ci && npm run build
+    startCommand: npm start
+    healthCheckPath: /api/health
+    autoDeploy: true
+    envVars:
+      - key: NODE_VERSION
+        value: "24"
+      - key: NEXT_TELEMETRY_DISABLED
+        value: "1"
+      - key: NEXT_PUBLIC_SITE_URL
+        sync: false
+      - key: NEXT_PUBLIC_ASSO_NAME
+        sync: false
+      - key: NEXT_PUBLIC_SUPABASE_URL
+        sync: false
+      - key: NEXT_PUBLIC_SUPABASE_ANON_KEY
+        sync: false
+      - key: SUPABASE_SERVICE_ROLE_KEY
+        sync: false
+      - key: NEXT_PUBLIC_HELLOASSO_DONATION_URL
+        sync: false
+      - key: HELLOASSO_ORG_SLUG
+        sync: false
+      - key: HELLOASSO_CLIENT_ID
+        sync: false
+      - key: HELLOASSO_CLIENT_SECRET
+        sync: false
+      - key: HELLOASSO_WEBHOOK_TOKEN
+        generateValue: true    # Render génère un jeton aléatoire

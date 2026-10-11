@@ -1,0 +1,13 @@
+node_modules/
+.next/
+.env
+.env.local
+.env.*.local
+supabase/.temp/
+supabase/.branches/
+.DS_Store
+Thumbs.db
+
+# Données de démo et configuration locale
+.demo/
+.claude/
