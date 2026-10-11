@@ -12,7 +12,7 @@ export default function LegalPage() {
       <h2>Éditeur</h2>
       <p>
         {site.name}, association loi 1901 déclarée en préfecture de [département] sous le n° RNA [W…].<br />
-        Siège : [adresse]. SIRET : [si applicable]. Directeur·rice de la publication : [nom, qualité].<br />
+        Siège : {site.address}. SIRET : [si applicable]. Directeur·rice de la publication : [nom, qualité].<br />
         Contact : <a href={`mailto:${site.email}`}>{site.email}</a>
       </p>
       <h2>Hébergement</h2>

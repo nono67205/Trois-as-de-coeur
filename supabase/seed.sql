@@ -33,13 +33,13 @@ join stock_items i on i.name = v.name;
 insert into events (slug, title, description, type, status, starts_at, ends_at, location, meeting_point, is_public, public_capacity, volunteer_slots) values
   ('maraude-mardi', 'Maraude du mardi soir', 'Distribution de repas chauds et de kits hygiène.', 'maraude', 'published',
     date_trunc('day', now()) + interval '2 day 19 hour', date_trunc('day', now()) + interval '2 day 23 hour',
-    'Centre-ville', 'Local de l''association', false, null, 8),
+    'Lyon 3e, quartier de la gare Part-Dieu', 'Local de l''association, 15 rue de Marignan, 69003 Lyon', false, null, 8),
   ('grande-collecte-hiver', 'Grande collecte d''hiver', 'Venez déposer vêtements chauds, duvets et produits d''hygiène.', 'collecte', 'published',
     date_trunc('day', now()) + interval '9 day 10 hour', date_trunc('day', now()) + interval '9 day 17 hour',
-    'Parvis de la mairie', 'Stand de l''association', true, 200, 6),
+    'Parvis de la mairie du 3e, Lyon', 'Stand de l''association', true, 200, 6),
   ('soiree-decouverte', 'Soirée découverte du bénévolat', 'Rencontrez l''équipe et découvrez comment vous engager.', 'evenement_public', 'published',
     date_trunc('day', now()) + interval '14 day 19 hour', date_trunc('day', now()) + interval '14 day 21 hour',
-    'Maison des associations', null, true, 40, 3);
+    'Salle des associations, Lyon 3e', null, true, 40, 3);
 
 insert into posts (slug, title, excerpt, content, status, published_at) values
   ('lancement-du-site', 'Notre nouveau site est en ligne',

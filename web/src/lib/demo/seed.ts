@@ -59,10 +59,10 @@ export function buildSeed(): DemoDB {
     const past = offset < 0;
     const id = randomUUID();
     events.push({
-      id, slug: `maraude-${iso(d).slice(0, 10)}`, title: dow === 2 ? "Maraude du mardi — centre-ville" : "Maraude du vendredi — gare",
+      id, slug: `maraude-${iso(d).slice(0, 10)}`, title: dow === 2 ? "Maraude du mardi — Presqu'île" : "Maraude du vendredi — Part-Dieu",
       description: "Distribution de repas chauds, boissons, kits d'hygiène et vêtements. Départ en binômes.",
       type: "maraude", status: past ? "done" : "published", starts_at: iso(d), ends_at: iso(day(offset, 23)),
-      location: dow === 2 ? "Centre-ville" : "Quartier de la gare", meeting_point: "Local de l'association, 12 rue des Lilas",
+      location: dow === 2 ? "Lyon 2e, Presqu'île et place Bellecour" : "Lyon 3e, quartier de la gare Part-Dieu", meeting_point: "Local de l'association, 15 rue de Marignan, 69003 Lyon",
       is_public: false, public_capacity: null, volunteer_slots: 8, required_skills: [], cover_url: null, cover_alt: null,
       created_by: staff[0]?.id, created_at: iso(day(offset - 14, 10)),
     });
@@ -82,13 +82,13 @@ export function buildSeed(): DemoDB {
   }
 
   const publicEvents = [
-    { title: "Grande collecte d'hiver", type: "collecte", offset: 9, h: 10, end: 17, loc: "Parvis de la mairie", cap: 200, slots: 6,
+    { title: "Grande collecte d'hiver", type: "collecte", offset: 9, h: 10, end: 17, loc: "Parvis de la mairie du 3e, Lyon", cap: 200, slots: 6,
       desc: "Venez déposer vêtements chauds, duvets, chaussettes et produits d'hygiène. Nous trions sur place avec vous !" },
-    { title: "Soirée découverte du bénévolat", type: "evenement_public", offset: 14, h: 19, end: 21, loc: "Maison des associations", cap: 40, slots: 3,
+    { title: "Soirée découverte du bénévolat", type: "evenement_public", offset: 14, h: 19, end: 21, loc: "Salle des associations, Lyon 3e", cap: 40, slots: 3,
       desc: "Vous avez envie d'aider mais ne savez pas par où commencer ? Rencontrez l'équipe autour d'un café et découvrez nos missions." },
-    { title: "Formation premiers secours (PSC1)", type: "formation", offset: 21, h: 9, end: 17, loc: "Local de l'association", cap: 12, slots: 2,
+    { title: "Formation premiers secours (PSC1)", type: "formation", offset: 21, h: 9, end: 17, loc: "Local de l'association, 15 rue de Marignan, 69003 Lyon", cap: 12, slots: 2,
       desc: "Une journée pour apprendre les gestes qui sauvent, animée par un formateur agréé. Ouverte aux bénévoles et au public." },
-    { title: "Concert solidaire", type: "evenement_public", offset: 30, h: 20, end: 23, loc: "Salle des fêtes", cap: 150, slots: 8,
+    { title: "Concert solidaire", type: "evenement_public", offset: 30, h: 20, end: 23, loc: "Salle des fêtes, Lyon 3e", cap: 150, slots: 8,
       desc: "Trois groupes locaux jouent au profit de nos maraudes d'hiver. Entrée libre, chapeau à la sortie." },
   ];
   for (const e of publicEvents) {
